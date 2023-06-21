@@ -2676,7 +2676,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 10
-      m_TileSpriteIndex: 7
+      m_TileSpriteIndex: 15
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2973,8 +2973,8 @@ Tilemap:
     m_Data: {fileID: 1577705535, guid: 265f1bd4791efae49b04ea4c128b255e, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: -523613956, guid: 265f1bd4791efae49b04ea4c128b255e, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -780395099, guid: 265f1bd4791efae49b04ea4c128b255e, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 54
@@ -2989,8 +2989,8 @@ Tilemap:
     m_Data: {fileID: 303374694, guid: 265f1bd4791efae49b04ea4c128b255e, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 1540402775, guid: 265f1bd4791efae49b04ea4c128b255e, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -780395099, guid: 265f1bd4791efae49b04ea4c128b255e, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 120
     m_Data:
@@ -4390,6 +4390,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cc2d: {fileID: 1406021543}
+  PuntuacionMonedas: {fileID: 0}
+  monedasTrack: 0
 --- !u!58 &1406021543
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4446,7 +4448,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4564,6 +4566,7 @@ MonoBehaviour:
   rb2d: {fileID: 0}
   ControladorDeEscenas: {fileID: 1621377141}
   PuntuacionMonedas: {fileID: 871114531}
+  MonedaFinalNivel: {fileID: 0}
   MovimientoJugador: {fileID: 1483228304}
   "Da\xF1o": {fileID: 8300000, guid: b215ab43cde7dfa4d960093a7858e9e1, type: 3}
   Moneda: {fileID: 8300000, guid: b6480c88796595d4484b6ae4e0c8ae57, type: 3}
@@ -4642,7 +4645,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   velocidad: 5
-  cantidadSalto: 7
+  cantidadSalto: 10
 --- !u!82 &1483228305
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4943,6 +4946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  PuntuacionMonedas: {fileID: 0}
 --- !u!1 &1629121488
 GameObject:
   m_ObjectHideFlags: 0
