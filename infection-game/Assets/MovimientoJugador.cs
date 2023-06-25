@@ -6,7 +6,7 @@ public class MovimientoJugador : MonoBehaviour
 {
     private Animator animator;
 
-    public Rigidbody2D rb2d;
+    private Rigidbody2D rb2d;
     private BoxCollider2D bc2d;
     [SerializeField] private LayerMask terrenoSaltable;
 
@@ -75,18 +75,18 @@ public class MovimientoJugador : MonoBehaviour
 
 
     // funcion deteccion de piso con Boxcast
-    //private bool Piso()
-    //{
-    //    return Physics2D.BoxCast(bc2d.bounds.center, bc2d.bounds.size, 0f, Vector2.down, .1f, terrenoSaltable);
-    //}
-
-    // funcion deteccion de piso con Raycast
     private bool Piso()
     {
-        float extraHeightText = .1f;
-        RaycastHit2D raycastHit = Physics2D.Raycast(bc2d.bounds.center, Vector2.down, bc2d.bounds.extents.y + extraHeightText, terrenoSaltable);
-        return raycastHit.collider != null;
+        return Physics2D.BoxCast(bc2d.bounds.center, bc2d.bounds.size, 0f, Vector2.down, .1f, terrenoSaltable);
     }
+
+    // funcion deteccion de piso con Raycast
+    //private bool Piso()
+    //{
+    //    float extraHeightText = .1f;
+    //    RaycastHit2D raycastHit = Physics2D.Raycast(bc2d.bounds.center, Vector2.down, bc2d.bounds.extents.y + extraHeightText, terrenoSaltable);
+    //    return raycastHit.collider != null;
+    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

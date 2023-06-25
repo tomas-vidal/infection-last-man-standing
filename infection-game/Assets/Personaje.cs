@@ -50,11 +50,7 @@ public class Personaje : MonoBehaviour
                 Morir();
             }
         } 
-        //else if (estado == GameState.muerto)
-        //{
-        //    rb2d.velocity = new Vector2(0, 0);
 
-        //}
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
