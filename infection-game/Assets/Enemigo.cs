@@ -10,7 +10,7 @@ public class Enemigo : MonoBehaviour
 
     public Transform B;
 
-    public Rigidbody2D rb2d;
+    private Rigidbody2D rb2d;
 
     public Personaje Personaje;
 

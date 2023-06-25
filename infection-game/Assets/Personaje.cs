@@ -14,13 +14,11 @@ public class Personaje : MonoBehaviour
     public bool puedeMoverse;
     [SerializeField] private Vector2 velocidadRebote;
 
-    public Rigidbody2D rb2d;
+    private Rigidbody2D rb2d;
     private Animator animator;
     public ControladorDeEscenas ControladorDeEscenas;
 
     public PuntuacionMonedas PuntuacionMonedas;
-
-    public MonedaFinalNivel MonedaFinalNivel;
 
     public MovimientoJugador MovimientoJugador;
 
