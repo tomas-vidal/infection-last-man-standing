@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class ControladorDeEscenas : MonoBehaviour
 {
-    public Animator animator;
+    private Animator animator;
     private int nivelACargar;
+
+    public Animator musicAnim;
 
     public PuntuacionMonedas PuntuacionMonedas;
 
@@ -35,6 +37,7 @@ public class ControladorDeEscenas : MonoBehaviour
     public void CargarNivel(int nivel)
     {
         animator.SetTrigger("Fade");
+        musicAnim.SetTrigger("fadeOut");
         nivelACargar = nivel;
     }
 

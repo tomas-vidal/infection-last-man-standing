@@ -40,7 +40,7 @@ public class HealthManager : MonoBehaviour
 
     }
 
-    public void recibioDaño(int daño, Vector2 posicion)
+    public void recibioDaño(int daño, Vector2 posicion = default(Vector2)) 
     {
         vidaActual = vidaActual - daño;
         
