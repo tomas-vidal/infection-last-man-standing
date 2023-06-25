@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!95 &44644442 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8277828327728334662, guid: 2a56aca1dcfa7214ea8d0a94b9079b3f, type: 3}
+  m_PrefabInstance: {fileID: 287280257}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &68779239
 GameObject:
   m_ObjectHideFlags: 0
@@ -3539,8 +3544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f7bf1c1318099f4a9d855a3ff1b60eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicAnim: {fileID: 0}
-  PuntuacionMonedas: {fileID: 0}
+  musicAnim: {fileID: 44644442}
 --- !u!1 &1629121488
 GameObject:
   m_ObjectHideFlags: 0

@@ -43,10 +43,10 @@ public class Personaje : MonoBehaviour
         {
             MovimientoJugador.Movimiento();
            
-            if (transform.position.y < -5.4)
-            {
-                Morir();
-            }
+            //if (transform.position.y < -5.4)
+            //{
+            //    Morir();
+            //}
         } 
 
     }
@@ -88,20 +88,15 @@ public class Personaje : MonoBehaviour
         src.Play();
         rb2d.velocity = new Vector2(0, 0);
         estado = GameState.muerto;
-        StartCoroutine(HealthManager.ReiniciarNivelTiempo());
 
     }
- 
+
+
     private void PasarNivel()
     {
         animator.SetFloat("Horizontal", 0);
         rb2d.velocity = new Vector2(0, 0);
         ControladorDeEscenas.SiguienteNivel();
-    }
-
-    private void RecargarNivelAnimacion()
-    {
-        ControladorDeEscenas.RecargarNivel();
     }
 
     public bool estaVivo()

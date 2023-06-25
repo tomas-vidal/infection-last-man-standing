@@ -71,12 +71,18 @@ public class HealthManager : MonoBehaviour
         {
             StartCoroutine(PerderControl());
             Personaje.Rebote(posicion);
-        } else if (vidaActual == 0)
+        } else if (vidaActual <= 0)
         {
-            StartCoroutine(ReiniciarNivelTiempo());
+            Personaje.Morir();
+            StartCoroutine(delayMorir());
         }
-        
-   
+    }
+
+
+    private IEnumerator delayMorir()
+    {
+        yield return new WaitForSeconds(1);
+        ControladorDeEscenas.RecargarNivel();
 
     }
 
@@ -87,10 +93,5 @@ public class HealthManager : MonoBehaviour
         Personaje.puedeMoverse = true;
     }
 
-    public IEnumerator ReiniciarNivelTiempo()
-    {
-        yield return new WaitForSeconds(tiempoRecargaNivel);
-        ControladorDeEscenas.RecargarNivel();
 
-    }
 }

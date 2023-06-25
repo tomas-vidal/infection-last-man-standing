@@ -8,6 +8,7 @@ TagManager:
   - Moneda
   - Enemigo
   - PasarNivel
+  - Kill
   layers:
   - Default
   - TransparentFX

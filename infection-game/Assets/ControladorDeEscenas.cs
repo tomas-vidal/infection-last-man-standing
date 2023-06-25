@@ -11,8 +11,6 @@ public class ControladorDeEscenas : MonoBehaviour
 
     public Animator musicAnim;
 
-    public PuntuacionMonedas PuntuacionMonedas;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -36,8 +34,8 @@ public class ControladorDeEscenas : MonoBehaviour
 
     public void CargarNivel(int nivel)
     {
-        animator.SetTrigger("Fade");
         musicAnim.SetTrigger("fadeOut");
+        animator.SetTrigger("Fade");
         nivelACargar = nivel;
     }
 
