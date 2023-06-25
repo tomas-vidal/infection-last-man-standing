@@ -75,7 +75,7 @@ public class MovimientoJugador : MonoBehaviour
 
 
     // funcion deteccion de piso con Boxcast
-    private bool Piso()
+    public bool Piso()
     {
         return Physics2D.BoxCast(bc2d.bounds.center, bc2d.bounds.size, 0f, Vector2.down, .1f, terrenoSaltable);
     }

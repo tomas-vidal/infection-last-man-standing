@@ -14,16 +14,19 @@ public class Personaje : MonoBehaviour
     public bool puedeMoverse;
     [SerializeField] private Vector2 velocidadRebote;
 
-    private Rigidbody2D rb2d;
+    public Rigidbody2D rb2d;
     private Animator animator;
     public ControladorDeEscenas ControladorDeEscenas;
 
     public PuntuacionMonedas PuntuacionMonedas;
 
     public MovimientoJugador MovimientoJugador;
+    public follow follow;
+
 
     private AudioSource src;
     public AudioClip Daño, Moneda, Muerte;
+
 
 
     // Start is called before the first frame update
@@ -55,7 +58,9 @@ public class Personaje : MonoBehaviour
     {
         if (collision.gameObject.tag == "PasarNivel")
         {
-            PasarNivel();
+            //follow.cameraFollow = false;
+            //rb2d.velocity = new Vector2(10, 0);
+            //PasarNivel();
 
         }
 

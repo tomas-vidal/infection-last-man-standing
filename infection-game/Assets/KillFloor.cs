@@ -22,7 +22,8 @@ public class KillFloor : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            HealthManager.recibioDaño(3);
+            HealthManager.vidaActual = 0;
+            HealthManager.recibioDaño(0);
         }
     }
 }
