@@ -52,14 +52,17 @@ public class Enemigo : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<HealthManager>().recibioDaño(1, other.GetContact(0).normal);
         }
-        if (!Personaje.estaVivo())
+
+        if (!other.gameObject.GetComponent<Personaje>().estado)
         {
             Physics2D.IgnoreCollision(other.gameObject.GetComponent<BoxCollider2D>(), gameObject.GetComponent<BoxCollider2D>());
         }
+
     }
 
 

@@ -7,11 +7,10 @@ public class Personaje : MonoBehaviour
 
     public enum GameState { vivo, muerto };
 
-    public GameState estado;
+    public bool estado;
 
     public HealthManager HealthManager;
 
-    public bool puedeMoverse;
     [SerializeField] private Vector2 velocidadRebote;
 
     public Rigidbody2D rb2d;
@@ -32,37 +31,24 @@ public class Personaje : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameState estado = GameState.vivo;
+        estado = true;
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        puedeMoverse = true;
         src = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (estado == GameState.vivo && puedeMoverse)
+        if (estado)
         {
-            MovimientoJugador.Movimiento();
-           
-            //if (transform.position.y < -5.4)
-            //{
-            //    Morir();
-            //}
+            MovimientoJugador.Movimiento();         
         } 
 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "PasarNivel")
-        {
-            //follow.cameraFollow = false;
-            //rb2d.velocity = new Vector2(10, 0);
-            //PasarNivel();
-
-        }
 
         if (collision.gameObject.tag == "Moneda")
         {
@@ -74,16 +60,12 @@ public class Personaje : MonoBehaviour
 
     public void Rebote(Vector2 puntoGolpe)
     {
-        src.clip = Daño;
-        src.Play();
-        rb2d.velocity = new Vector2(-velocidadRebote.x * puntoGolpe.x, velocidadRebote.y);
-    }
-    
-    public void ResetVelocity()
-    {
-        animator.ResetTrigger("daño");
-        puedeMoverse = true;
-        rb2d.velocity = new Vector2(0, 0);
+        if (estado)
+        {
+            src.clip = Daño;
+            src.Play();
+            rb2d.velocity = new Vector2(-velocidadRebote.x * puntoGolpe.x, velocidadRebote.y);
+        }
     }
 
     public void Morir()
@@ -92,7 +74,7 @@ public class Personaje : MonoBehaviour
         src.clip = Muerte;
         src.Play();
         rb2d.velocity = new Vector2(0, 0);
-        estado = GameState.muerto;
+        estado = false;
 
     }
 
@@ -106,7 +88,7 @@ public class Personaje : MonoBehaviour
 
     public bool estaVivo()
     {
-        if (estado == GameState.vivo)
+        if (estado)
         {
             return true;
         } else

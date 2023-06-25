@@ -34,11 +34,12 @@ public class MonedaFinalNivel : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // cuando termina el nivel el jugador sigue caminando y sale "nivel completado"
         if (collision.gameObject.tag == "Player")
         {
-            // FIX jumping when lvl complete
             follow.cameraFollow = false;
-            Personaje.puedeMoverse = false;
+            MovimientoJugador.puedeMoverse = false;
+            MovimientoJugador.rb2d.velocity = new Vector2(MovimientoJugador.velocidad, MovimientoJugador.rb2d.velocity.y);
             lvlAnim.SetTrigger("lvlComplete");
             StartCoroutine(delayLvl());
 

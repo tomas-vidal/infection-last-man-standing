@@ -12,6 +12,7 @@ public class HealthManager : MonoBehaviour
 
 
     private Personaje Personaje;
+    private MovimientoJugador MovimientoJugador;
     [SerializeField] private float tiempoPerdidaControl;
     [SerializeField] private float tiempoRecargaNivel;
 
@@ -30,6 +31,7 @@ public class HealthManager : MonoBehaviour
         vidaActual = maxVida;
         corazon.sprite = corazonLleno;
         Personaje = GetComponent<Personaje>();
+        MovimientoJugador = GetComponent<MovimientoJugador>();
 
     }
 
@@ -67,10 +69,12 @@ public class HealthManager : MonoBehaviour
         }
 
 
-        if (vidaActual != 0)
+        if (vidaActual > 0)
         {
-            StartCoroutine(PerderControl());
             Personaje.Rebote(posicion);
+            MovimientoJugador.puedeMoverse = false;
+            StartCoroutine(PerderControl());
+
         } else if (vidaActual <= 0)
         {
             Personaje.Morir();
@@ -87,10 +91,12 @@ public class HealthManager : MonoBehaviour
     }
 
     private IEnumerator PerderControl()
-    {
-        Personaje.puedeMoverse = false;
+    { 
         yield return new WaitForSeconds(tiempoPerdidaControl);
-        Personaje.puedeMoverse = true;
+        Personaje.rb2d.velocity = new Vector2(0, 0);
+        MovimientoJugador.puedeMoverse = true;
+
+
     }
 
 

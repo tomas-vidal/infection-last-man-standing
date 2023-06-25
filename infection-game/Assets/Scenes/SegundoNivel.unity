@@ -4079,6 +4079,10 @@ PrefabInstance:
       propertyPath: ControladorDeEscenas
       value: 
       objectReference: {fileID: 1621377141}
+    - target: {fileID: 4590156642512949594, guid: dd46f08cd3246684cafbdcd329bd2c53, type: 3}
+      propertyPath: tiempoPerdidaControl
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4590156642512949599, guid: dd46f08cd3246684cafbdcd329bd2c53, type: 3}
       propertyPath: follow
       value: 
@@ -4087,6 +4091,14 @@ PrefabInstance:
       propertyPath: PuntuacionMonedas
       value: 
       objectReference: {fileID: 871114531}
+    - target: {fileID: 4590156642512949599, guid: dd46f08cd3246684cafbdcd329bd2c53, type: 3}
+      propertyPath: velocidadRebote.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590156642512949599, guid: dd46f08cd3246684cafbdcd329bd2c53, type: 3}
+      propertyPath: velocidadRebote.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4590156642512949599, guid: dd46f08cd3246684cafbdcd329bd2c53, type: 3}
       propertyPath: ControladorDeEscenas
       value: 
@@ -4097,11 +4109,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7778643655284482283, guid: dd46f08cd3246684cafbdcd329bd2c53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 47.36
+      value: -1.98
       objectReference: {fileID: 0}
     - target: {fileID: 7778643655284482283, guid: dd46f08cd3246684cafbdcd329bd2c53, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.12
+      value: -3.08
       objectReference: {fileID: 0}
     - target: {fileID: 7778643655284482283, guid: dd46f08cd3246684cafbdcd329bd2c53, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4195,6 +4207,14 @@ PrefabInstance:
     - target: {fileID: 7981117825986437965, guid: e40b593c0cad6424f8fc7b06c0f11644, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7981117826683864000, guid: e40b593c0cad6424f8fc7b06c0f11644, type: 3}
+      propertyPath: m_Size.y
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7981117826683864000, guid: e40b593c0cad6424f8fc7b06c0f11644, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 7981117826683864003, guid: e40b593c0cad6424f8fc7b06c0f11644, type: 3}
       propertyPath: Personaje

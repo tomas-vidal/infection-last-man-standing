@@ -5,8 +5,10 @@ using UnityEngine;
 public class MovimientoJugador : MonoBehaviour
 {
     private Animator animator;
+    public bool puedeMoverse;
 
-    private Rigidbody2D rb2d;
+
+    public Rigidbody2D rb2d;
     private BoxCollider2D bc2d;
     [SerializeField] private LayerMask terrenoSaltable;
 
@@ -21,6 +23,7 @@ public class MovimientoJugador : MonoBehaviour
         animator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         bc2d = GetComponent<BoxCollider2D>();
+        puedeMoverse = true;
 
 
     }
@@ -28,37 +31,62 @@ public class MovimientoJugador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 
     public void Movimiento()
     {
-        if (Input.GetAxis("Horizontal") != 0)
+        if (puedeMoverse)
         {
-            animator.SetFloat("Horizontal", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
-            rb2d.velocity = new Vector2(velocidad * Input.GetAxisRaw("Horizontal"), rb2d.velocity.y);
-            Rotacion(); // rota el perfil del personaje según dirección
+            if (Input.GetAxis("Horizontal") != 0)
+            {
+                animator.SetFloat("Horizontal", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
+                rb2d.velocity = new Vector2(velocidad * Input.GetAxisRaw("Horizontal"), rb2d.velocity.y);
+                Rotacion(); // rota el perfil del personaje según dirección
+
+            }
+
+            if (Piso())
+            {
+                animator.SetBool("animacionCaer", false);
+            }
+
+            if (rb2d.velocity.y < 0 && !Piso())
+            {
+                animator.SetBool("animacionCaer", true);
+                animator.SetBool("animacionSaltar", false);
+
+            }
+
+            if (Input.GetButtonDown("Jump") && Piso())
+            {
+                animator.SetBool("animacionSaltar", true);
+                rb2d.velocity = cantidadSalto * transform.up;
+
+            }
+
+
+            
+
+        } else
+        {
+            //fix player jump when collides with next level
+            if (Piso())
+            {
+                animator.SetBool("animacionCaer", false);
+            }
+
+            if (rb2d.velocity.y < 0 && !Piso())
+            {
+                animator.SetBool("animacionCaer", true);
+                animator.SetBool("animacionSaltar", false);
+
+            }
 
         }
 
 
-        if (Input.GetButtonDown("Jump") && Piso())
-        {
-            animator.SetBool("animacionSaltar", true);
-            rb2d.velocity = cantidadSalto * transform.up;
 
-        }
-
-
-        if (rb2d.velocity.y < 0 && !Piso())
-        {
-            animator.SetBool("animacionCaer", true);
-            animator.SetBool("animacionSaltar", false);
-
-        }
-        if (Piso())
-        {
-            animator.SetBool("animacionCaer", false);
-        }
     }
 
     public void Rotacion()
