@@ -23,8 +23,8 @@ public class Personaje : MonoBehaviour
     public follow follow;
 
 
-    private AudioSource src;
-    public AudioClip Daño, Moneda, Muerte;
+    public AudioSource src;
+    public AudioClip Daño, Moneda, Muerte, Salto;
 
 
 

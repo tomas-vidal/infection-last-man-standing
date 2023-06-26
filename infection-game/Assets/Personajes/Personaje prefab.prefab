@@ -153,16 +153,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   estado: 0
   HealthManager: {fileID: 4590156642512949594}
-  puedeMoverse: 0
   velocidadRebote: {x: 5, y: 5}
   rb2d: {fileID: 0}
   ControladorDeEscenas: {fileID: 0}
   PuntuacionMonedas: {fileID: 0}
-  MonedaFinalNivel: {fileID: 0}
   MovimientoJugador: {fileID: 4590156642512949572}
+  follow: {fileID: 0}
+  src: {fileID: 0}
   "Da\xF1o": {fileID: 8300000, guid: b215ab43cde7dfa4d960093a7858e9e1, type: 3}
   Moneda: {fileID: 8300000, guid: b6480c88796595d4484b6ae4e0c8ae57, type: 3}
   Muerte: {fileID: 8300000, guid: 762547b548944634ea6a684924af1496, type: 3}
+  Salto: {fileID: 8300000, guid: 7ed058fcad5b1734ba464b0eeb7c6d53, type: 3}
 --- !u!114 &4590156642512949592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,6 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c59e25f723223418bbd7a220f2bc7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puedeMoverse: 0
   rb2d: {fileID: 0}
   terrenoSaltable:
     serializedVersion: 2

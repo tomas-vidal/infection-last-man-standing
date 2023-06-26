@@ -15,6 +15,7 @@ public class MovimientoJugador : MonoBehaviour
     public float velocidad;
     public float cantidadSalto;
 
+    private Personaje Personaje;
 
 
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class MovimientoJugador : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         bc2d = GetComponent<BoxCollider2D>();
         puedeMoverse = true;
+        Personaje = GetComponent<Personaje>();
 
 
     }
@@ -60,6 +62,8 @@ public class MovimientoJugador : MonoBehaviour
 
             if (Input.GetButtonDown("Jump") && Piso())
             {
+                Personaje.src.clip = Personaje.Salto;
+                Personaje.src.Play();
                 animator.SetBool("animacionSaltar", true);
                 rb2d.velocity = cantidadSalto * transform.up;
 

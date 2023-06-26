@@ -9,15 +9,12 @@ public class HealthManager : MonoBehaviour
     public int vidaActual;
     public Image corazon;
 
-
-
     private Personaje Personaje;
     private MovimientoJugador MovimientoJugador;
     [SerializeField] private float tiempoPerdidaControl;
     [SerializeField] private float tiempoRecargaNivel;
 
     public ControladorDeEscenas ControladorDeEscenas;
-
 
     public Sprite corazonLleno;
     public Sprite corazonCasiLleno;
