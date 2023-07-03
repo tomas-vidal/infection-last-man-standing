@@ -22,7 +22,6 @@ public class Personaje : MonoBehaviour
     public MovimientoJugador MovimientoJugador;
     public follow follow;
 
-
     public AudioSource src;
     public AudioClip Daño, Moneda, Muerte, Salto;
 

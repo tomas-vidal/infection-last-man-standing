@@ -6,9 +6,11 @@ public class KillFloor : MonoBehaviour
 {
     public ControladorDeEscenas ControladorDeEscenas;
     public HealthManager HealthManager;
+    public Personaje Personaje;
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -21,9 +23,13 @@ public class KillFloor : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+
+            if (Personaje.estaVivo())
+            {
             HealthManager.vidaActual = 0;
 
-            HealthManager.recibioDaño(0);
+                HealthManager.recibioDaño(0);
+            }
         }
     }
 }

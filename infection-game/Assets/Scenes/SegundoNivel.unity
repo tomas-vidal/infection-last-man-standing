@@ -342,6 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ControladorDeEscenas: {fileID: 1621377141}
   HealthManager: {fileID: 1692759217}
+  Personaje: {fileID: 1483228299}
 --- !u!212 &167741062
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3547,11 +3548,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8514962613782933399, guid: cdc679d08f6a5ff4a968d7278b2f31ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.16
+      value: 15.08
       objectReference: {fileID: 0}
     - target: {fileID: 8514962613782933399, guid: cdc679d08f6a5ff4a968d7278b2f31ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9036517
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 8514962613782933399, guid: cdc679d08f6a5ff4a968d7278b2f31ae, type: 3}
       propertyPath: m_LocalPosition.z
