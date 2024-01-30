@@ -5,16 +5,58 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/KnifeScene.unity
+    guid: 82dd2ec2155106c48b7e49c935f5cd07
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 15d48c069ebbdf34dbcabe635e8f3738
+    path: Assets/Menu.unity
+    guid: 05882ac2beff83e4c9783779bc8e238b
   - enabled: 1
-    path: Assets/Scenes/PrimerNivel 1.unity
+    path: Assets/Scenes/SelectLvls.unity
+    guid: 5e3a099cd882e2745aa9caa00b0d4226
+  - enabled: 1
+    path: Assets/Scenes/Levels/1 - PrimerNivel.unity
     guid: 94f1a8561d32b844993d3c7a83ab0dff
   - enabled: 1
-    path: Assets/Scenes/SegundoNivel.unity
+    path: Assets/Scenes/Cinematics/1 - Knife Cinematic.unity
+    guid: 18e835b2d3a49104bb9d9b7c4624a39f
+  - enabled: 1
+    path: Assets/Scenes/Levels/2 - SegundoNivel.unity
     guid: 36a8c1b6aa591d44395ac7dcf9ac32ba
+  - enabled: 1
+    path: Assets/Scenes/Cinematics/2 - Pistol Cinematic.unity
+    guid: c57c0deb17b39864aa247beb29527f37
+  - enabled: 1
+    path: Assets/Scenes/Levels/3 - TercerNivel.unity
+    guid: c3cb32694527ab6439fd42f95124df4c
+  - enabled: 1
+    path: Assets/Scenes/Levels/4 - CuartoNivel.unity
+    guid: 901de47665110cb4eb28ac1dc0520335
+  - enabled: 1
+    path: Assets/Scenes/Levels/5 - Quinto nivel.unity
+    guid: 6f135fa24488c50488629dd1f3f6679f
+  - enabled: 1
+    path: Assets/Scenes/Levels/6 - Sexto nivel.unity
+    guid: 02fe7b857f5cb20418e8c0a735910aec
+  - enabled: 1
+    path: Assets/Scenes/Levels/7 - Septimo nivel.unity
+    guid: 35e4828773912d343a03894e15860e81
+  - enabled: 1
+    path: Assets/Scenes/Levels/8 - Octavo nivel.unity
+    guid: 763c45f825631154d8100b7033097556
+  - enabled: 1
+    path: Assets/Scenes/Levels/9 - Noveno nivel.unity
+    guid: fe22edb59fd48e44c86ec2d22456432c
+  - enabled: 1
+    path: Assets/Scenes/Levels/10 - DecimoNivel.unity
+    guid: 3b85e9e35676f3d429c7597e1dd45955
   - enabled: 1
     path: Assets/Scenes/Creditos.unity
     guid: 49d2cfae7b9c63b4e8fd40ac959e02e9
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: 91bc8c43bfceb8941b83ce178d55df25
+  - enabled: 1
+    path: Assets/Controles.unity
+    guid: d5bebc3683f98b24a87f267fc569f6d2
   m_configObjects: {}

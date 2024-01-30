@@ -151,15 +151,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a97530ab3b56f064f91a95f0e9b1bfad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  estado: 0
   HealthManager: {fileID: 4590156642512949594}
   velocidadRebote: {x: 5, y: 5}
   rb2d: {fileID: 0}
   ControladorDeEscenas: {fileID: 0}
-  PuntuacionMonedas: {fileID: 0}
+  Puntuation: {fileID: 0}
   MovimientoJugador: {fileID: 4590156642512949572}
   follow: {fileID: 0}
+  checkPointPosition: {fileID: 0}
+  transform: {fileID: 0}
+  KBCounter: 0
   src: {fileID: 0}
+  jump:
+  - {fileID: 8300000, guid: 7ed058fcad5b1734ba464b0eeb7c6d53, type: 3}
+  - {fileID: 8300000, guid: c03286e008bc0924e94bcb19585f0c5e, type: 3}
   "Da\xF1o": {fileID: 8300000, guid: b215ab43cde7dfa4d960093a7858e9e1, type: 3}
   Moneda: {fileID: 8300000, guid: b6480c88796595d4484b6ae4e0c8ae57, type: 3}
   Muerte: {fileID: 8300000, guid: 762547b548944634ea6a684924af1496, type: 3}
@@ -176,8 +181,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff848afdb3857c43a13a38ec4217414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monedas: 0
   puntuacionTexto: {fileID: 0}
+  ammoText: {fileID: 0}
+  ammo: 0
 --- !u!95 &4590156642512949593
 Animator:
   serializedVersion: 5
@@ -233,7 +239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c59e25f723223418bbd7a220f2bc7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puedeMoverse: 0
   rb2d: {fileID: 0}
   terrenoSaltable:
     serializedVersion: 2

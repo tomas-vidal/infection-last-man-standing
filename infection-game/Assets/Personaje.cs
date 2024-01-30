@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+    public enum GameState { vivo, muerto };
+
+
 public class Personaje : MonoBehaviour
 {
 
-    public enum GameState { vivo, muerto };
-
-    public bool estado;
+    public static GameState state;
 
     public HealthManager HealthManager;
 
@@ -17,65 +18,111 @@ public class Personaje : MonoBehaviour
     private Animator animator;
     public ControladorDeEscenas ControladorDeEscenas;
 
-    public PuntuacionMonedas PuntuacionMonedas;
+    private PlayerCombat PlayerCombat;
+
+    public Puntuation Puntuation;
 
     public MovimientoJugador MovimientoJugador;
     public follow follow;
+    public Transform checkPointPosition;
+    public Transform transform;
+
+    public float delay = .5f;
+
+    public float KBCounter;
 
     public AudioSource src;
+    public AudioClip[] jump;
     public AudioClip Daño, Moneda, Muerte, Salto;
 
-
+    public bool isBeingHurt = false;
 
     // Start is called before the first frame update
+
+
     void Start()
     {
-        estado = true;
+        state = GameState.vivo;
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         src = GetComponent<AudioSource>();
+        PlayerCombat = GetComponent<PlayerCombat>();
+        transform = GetComponent<Transform>();
+        if (Checkpoint.checkpointReached)
+        {
+            GetComponent<Transform>().position = Checkpoint.lastCheckpointPos;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (estado)
+        if (state == GameState.vivo && !PauseMenu.isPaused && !isBeingHurt)
         {
-            MovimientoJugador.Movimiento();         
+            MovimientoJugador.Movimiento();
         } 
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.gameObject.tag == "Moneda")
         {
-            PuntuacionMonedas.AgregarMoneda();
-            src.clip = Moneda;
-            src.Play();
+            Puntuation.AgregarMoneda();
+            src.PlayOneShot(Moneda);
         }
+
+
     }
 
-    public void Rebote(Vector2 puntoGolpe)
+    public void Rebote(Transform puntoGolpe)
     {
-        if (estado)
+        if (state == GameState.vivo)
         {
-            src.clip = Daño;
-            src.Play();
-            rb2d.velocity = new Vector2(-velocidadRebote.x * puntoGolpe.x, velocidadRebote.y);
+            MovimientoJugador.KBCounter = 0.3f;
+            src.PlayOneShot(Daño);
+
+            PlayFeedback(puntoGolpe);
+           
+            //rb2d.velocity = new Vector2(-velocidadRebote.x * puntoGolpe.x, velocidadRebote.y);
         }
+    
+    
+    }
+
+    void PlayFeedback(Transform position)
+    {
+        StopAllCoroutines();
+        if (position.position.x < transform.position.x)
+        {
+            rb2d.velocity = new Vector2(5f, 5f);
+
+        }
+        else
+        {
+            rb2d.velocity = new Vector2(-5f, 5f);
+        }
+        isBeingHurt = true;
+        StartCoroutine(Reset());
+    }
+
+    private IEnumerator Reset()
+    {
+        yield return new WaitForSeconds(delay);
+        isBeingHurt = false;
     }
 
     public void Morir()
     {
-        animator.SetTrigger("jugadorMuere");
-        src.clip = Muerte;
-        src.Play();
-        rb2d.velocity = new Vector2(0, 0);
-        estado = false;
-
+        if (state == GameState.vivo)
+        {
+            animator.SetBool("isDead", true);
+            src.PlayOneShot(Muerte);
+            state = GameState.muerto;
+            rb2d.velocity = new Vector2(0, 0);
+            GetComponent<SpriteRenderer>().sortingOrder = -1;
+        }
     }
+
 
 
     private void PasarNivel()
@@ -83,16 +130,5 @@ public class Personaje : MonoBehaviour
         animator.SetFloat("Horizontal", 0);
         rb2d.velocity = new Vector2(0, 0);
         ControladorDeEscenas.SiguienteNivel();
-    }
-
-    public bool estaVivo()
-    {
-        if (estado)
-        {
-            return true;
-        } else
-        {
-            return false;
-        }
     }
 }

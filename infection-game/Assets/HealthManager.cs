@@ -36,47 +36,40 @@ public class HealthManager : MonoBehaviour
     void Update()
     {
     
-
     }
 
-    public void recibioDaño(int daño, Vector2 posicion = default(Vector2)) 
+    public void recibioDaño(int daño, Transform posicion) 
     {
-        vidaActual = vidaActual - daño;
-        
+            vidaActual = vidaActual - daño;
+            switch (vidaActual)
+            {
+                case 3:
+                    corazon.sprite = corazonLleno;
+                    break;
+                case 2:
+                    corazon.sprite = corazonCasiLleno;
+                    break;
+                case 1:
+                    corazon.sprite = corazonMedio;
+                    break;
+                case 0:
+                    corazon.sprite = corazonVacio;
+                    break;
+                default:
+                    corazon.sprite = corazonVacio;
+                    break;
+            }
 
+            if (vidaActual > 0)
+            {
+                Personaje.Rebote(posicion);
 
-        switch (vidaActual)
-        {
-            case 3: 
-                corazon.sprite = corazonLleno;
-                break;
-            case 2:
-                corazon.sprite = corazonCasiLleno;
-                break;
-            case 1:
-                corazon.sprite = corazonMedio;
-                break;
-            case 0:
-                corazon.sprite = corazonVacio;
+            }
+            if (vidaActual <= 0 && Personaje.state == GameState.vivo)
+            {
+                StartCoroutine(delayMorir());
                 Personaje.Morir();
-                break;
-            default:
-                corazon.sprite = corazonVacio;
-                break;
-        }
-
-
-        if (vidaActual > 0)
-        {
-            Personaje.Rebote(posicion);
-            MovimientoJugador.puedeMoverse = false;
-            StartCoroutine(PerderControl());
-
-        } else if (vidaActual <= 0)
-        {
-            Personaje.Morir();
-            StartCoroutine(delayMorir());
-        }
+            }
     }
 
 
@@ -84,17 +77,6 @@ public class HealthManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         ControladorDeEscenas.RecargarNivel();
-
     }
-
-    private IEnumerator PerderControl()
-    { 
-        yield return new WaitForSeconds(tiempoPerdidaControl);
-        Personaje.rb2d.velocity = new Vector2(0, 0);
-        MovimientoJugador.puedeMoverse = true;
-
-
-    }
-
 
 }

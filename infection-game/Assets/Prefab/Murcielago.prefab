@@ -143,8 +143,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2243220827686044090, guid: dd46f08cd3246684cafbdcd329bd2c53, type: 3}
-  distance: 3
-  speedEnemy: 2
+  speed: 3
+  distanceFollow: 1
+  transformPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  minDistance: 3
+  isBeingHurt: 0
 --- !u!61 &5936225026573095815
 BoxCollider2D:
   m_ObjectHideFlags: 0

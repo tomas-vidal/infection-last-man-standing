@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class Monedas : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public string uniqueId;
+    public bool pickedUp;
+
     void Start()
     {
-        
+        uniqueId = System.Guid.NewGuid().ToString();
+        pickedUp = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -21,7 +23,8 @@ public class Monedas : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject);
+            pickedUp = true;
+            Destroy(gameObject);
         }
     }
 }

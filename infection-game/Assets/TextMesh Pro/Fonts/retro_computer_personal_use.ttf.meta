@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 42e5615b69f35114c8264c08f6c9cc9b
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Retro Computer
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b4a945345cc577d499e4463e6b057981, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

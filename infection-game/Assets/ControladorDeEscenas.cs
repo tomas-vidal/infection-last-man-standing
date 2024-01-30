@@ -9,44 +9,91 @@ public class ControladorDeEscenas : MonoBehaviour
     private Animator animator;
     private int nivelACargar;
 
-    public Animator musicAnim;
+    public HealthManager HealthManager;
+
+    public Puntuation Puntuation;
+
 
     // Start is called before the first frame update
+
     void Start()
     {
-     animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
+        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("lvlsUnlocked", 2) && SceneManager.GetActiveScene().name != "Shop")
+        {
+            PlayerPrefs.SetInt("lvlsUnlocked", SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RecargarNivel();
+        } 
+
+     
     }
 
     public void RecargarNivel()
     {
-        CargarNivel(SceneManager.GetActiveScene().buildIndex);
+        animator.SetTrigger("Fade");
+        nivelACargar = SceneManager.GetActiveScene().buildIndex;
+    }
+
+    public void EndLvl()
+    {
+        Destroy(GameObject.FindWithTag("CoinManager"));
+        Destroy(GameObject.FindWithTag("Checkpoint"));
+        // PlayerPrefs.SetInt("currentLvl", SceneManager.GetActiveScene().buildIndex);
+        //if (!GameObject.FindWithTag("Cinematic") && SceneManager.GetActiveScene().buildIndex > 5)
+        //{
+        //    if (Puntuation != null)
+        //    {
+        //        PlayerPrefs.SetInt("totalCoins", PlayerPrefs.GetInt("totalCoins") + Puntuation.monedas);
+        //    }
+        //    CargarNivel(100);
+        //} else
+        //{
+        if (SceneManager.GetActiveScene().buildIndex < 6)
+        {
+            SiguienteNivel();
+        } else
+        {
+            CargarNivel(200);
+        }
+        // }
+              
     }
 
     public void SiguienteNivel()
     {
-        CargarNivel(SceneManager.GetActiveScene().buildIndex + 1);
+        CargarNivel(PlayerPrefs.GetInt("currentLvl") + 1);
     }
 
     public void CargarNivel(int nivel)
     {
-        musicAnim.SetTrigger("fadeOut");
+        Destroy(GameObject.FindWithTag("CoinManager"));
+        Destroy(GameObject.FindWithTag("Checkpoint"));
         animator.SetTrigger("Fade");
         nivelACargar = nivel;
     }
 
-
+    public void ContinueGame()
+    {
+        // CargarNivel(PlayerPrefs.GetInt("currentLvl") + 1);
+    }
 
     public void FadeTerminado()
     {
-
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        SceneManager.LoadScene(nivelACargar);
-
-
+        if (nivelACargar < 100) {
+            SceneManager.LoadScene(nivelACargar);
+        } else
+        {
+            SceneManager.LoadScene("Shop");
+        }
     }
+
+
 }
