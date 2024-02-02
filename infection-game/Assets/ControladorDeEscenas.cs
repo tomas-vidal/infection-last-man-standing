@@ -12,6 +12,7 @@ public class ControladorDeEscenas : MonoBehaviour
     public HealthManager HealthManager;
 
     public Puntuation Puntuation;
+    public int lvlsUnlocked;
 
 
     // Start is called before the first frame update
@@ -19,7 +20,8 @@ public class ControladorDeEscenas : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("lvlsUnlocked", 2) && SceneManager.GetActiveScene().name != "Shop")
+        lvlsUnlocked = PlayerPrefs.GetInt("lvlsUnlocked", 2);
+        if (SceneManager.GetActiveScene().buildIndex >= lvlsUnlocked && SceneManager.GetActiveScene().name != "Shop")
         {
             PlayerPrefs.SetInt("lvlsUnlocked", SceneManager.GetActiveScene().buildIndex);
         }
@@ -95,5 +97,15 @@ public class ControladorDeEscenas : MonoBehaviour
         }
     }
 
+    public void QuitGame()
+    {
+        PlayerPrefs.Save();
+        Application.Quit();
+    }
+
+    public void DeletePlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 
 }
