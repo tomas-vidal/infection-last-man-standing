@@ -1130,6 +1130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 669977783}
     m_Modifications:
+    - target: {fileID: 2149236912929019926, guid: 216753ce3a55a694195ab57a5463e2ca, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -52
+      objectReference: {fileID: 0}
+    - target: {fileID: 2149236912929019926, guid: 216753ce3a55a694195ab57a5463e2ca, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 49
+      objectReference: {fileID: 0}
     - target: {fileID: 3157489961382813696, guid: 216753ce3a55a694195ab57a5463e2ca, type: 3}
       propertyPath: m_Name
       value: PauseMenu
@@ -1217,6 +1225,14 @@ PrefabInstance:
     - target: {fileID: 3157489961382813759, guid: 216753ce3a55a694195ab57a5463e2ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157489961806784201, guid: 216753ce3a55a694195ab57a5463e2ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 34469407}
+    - target: {fileID: 3157489961806784201, guid: 216753ce3a55a694195ab57a5463e2ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeGame
       objectReference: {fileID: 0}
     - target: {fileID: 3157489962091988474, guid: 216753ce3a55a694195ab57a5463e2ca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5174,6 +5190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2242e7ee03d0abd46976deea33d654ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonMusic: {fileID: 0}
+  musicIcons: []
 --- !u!81 &1245684564
 AudioListener:
   m_ObjectHideFlags: 0
@@ -5984,6 +6002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthManager: {fileID: 392309004}
   Puntuation: {fileID: 669977782}
+  lvlsUnlocked: 0
 --- !u!95 &1672729565
 Animator:
   serializedVersion: 5
@@ -6301,6 +6320,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1628705175518263638, guid: 141d363611a707348be44daee7c52a07, type: 3}
+      propertyPath: m_Size.x
+      value: 15.321449
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628705175518263638, guid: 141d363611a707348be44daee7c52a07, type: 3}
+      propertyPath: m_Size.y
+      value: 7.134949
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628705175518263638, guid: 141d363611a707348be44daee7c52a07, type: 3}
+      propertyPath: m_Offset.x
+      value: 7.1607246
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628705175518263638, guid: 141d363611a707348be44daee7c52a07, type: 3}
+      propertyPath: m_Offset.y
+      value: 2.3824747
+      objectReference: {fileID: 0}
     - target: {fileID: 1628705175518263639, guid: 141d363611a707348be44daee7c52a07, type: 3}
       propertyPath: follow
       value: 

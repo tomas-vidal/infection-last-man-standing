@@ -10604,6 +10604,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2242e7ee03d0abd46976deea33d654ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonMusic: {fileID: 0}
+  musicIcons: []
 --- !u!114 &729196155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11024,6 +11026,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3157489961806784201, guid: 216753ce3a55a694195ab57a5463e2ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2048063698}
+    - target: {fileID: 3157489961806784201, guid: 216753ce3a55a694195ab57a5463e2ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeGame
+      objectReference: {fileID: 0}
     - target: {fileID: 3157489962091988474, guid: 216753ce3a55a694195ab57a5463e2ca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -11300,11 +11310,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7778643655284482283, guid: dd46f08cd3246684cafbdcd329bd2c53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.39
+      value: -4.06
       objectReference: {fileID: 0}
     - target: {fileID: 7778643655284482283, guid: dd46f08cd3246684cafbdcd329bd2c53, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.51
+      value: -0.41
       objectReference: {fileID: 0}
     - target: {fileID: 7778643655284482283, guid: dd46f08cd3246684cafbdcd329bd2c53, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12205,6 +12215,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1628705175518263638, guid: 141d363611a707348be44daee7c52a07, type: 3}
+      propertyPath: m_Size.x
+      value: 15.048157
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628705175518263638, guid: 141d363611a707348be44daee7c52a07, type: 3}
+      propertyPath: m_Size.y
+      value: 8.304511
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628705175518263638, guid: 141d363611a707348be44daee7c52a07, type: 3}
+      propertyPath: m_Offset.x
+      value: 7.0240784
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628705175518263638, guid: 141d363611a707348be44daee7c52a07, type: 3}
+      propertyPath: m_Offset.y
+      value: 2.967255
+      objectReference: {fileID: 0}
     - target: {fileID: 1628705175518263639, guid: 141d363611a707348be44daee7c52a07, type: 3}
       propertyPath: Piso
       value: 

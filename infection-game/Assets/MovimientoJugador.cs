@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class MovimientoJugador : MonoBehaviour
 {
-    private Animator animator;
+    public Animator animator;
 
     public Rigidbody2D rb2d;
     private BoxCollider2D bc2d;
@@ -19,7 +19,6 @@ public class MovimientoJugador : MonoBehaviour
 
     private Personaje Personaje;
     private PlayerCombat playerCombat;
-    private bool jumpbool;
 
     // Start is called before the first frame update
     void Start()
@@ -39,25 +38,39 @@ public class MovimientoJugador : MonoBehaviour
 
     public void Movimiento()
     {
-        if (Piso())
+
+        if (rb2d.velocity.y < 0)
         {
-            animator.SetBool("isGrounded", true);
-            animator.SetBool("animacionCaer", false);
             animator.SetBool("animacionSaltar", false);
-        }  else
-        {
+            animator.SetBool("animacionCaer", true);
             animator.SetBool("isGrounded", false);
-            if (rb2d.velocity.y < 0)
-            {
-                animator.SetBool("animacionSaltar", false);
-                animator.SetBool("animacionCaer", true);
-            }
+        }
+        if (rb2d.velocity.y > 0)
+        {
+            animator.SetBool("animacionSaltar", true);
+            animator.SetBool("animacionCaer", false);
+            animator.SetBool("isGrounded", false);
         }
 
-        
 
-        if (KBCounter <= 0)
+            if (KBCounter <= 0)
         {
+            if (Piso())
+            {
+                animator.SetBool("isGrounded", true);
+                animator.SetBool("animacionCaer", false);
+                animator.SetBool("animacionSaltar", false);
+                if (Input.GetButtonDown("Jump"))
+                {
+                    Personaje.src.PlayOneShot(Personaje.Salto);
+                    rb2d.velocity = cantidadSalto * transform.up;
+                }
+            }
+            else
+            {
+                animator.SetBool("isGrounded", false);
+                
+            }
             if (Input.GetAxis("Horizontal") != 0)
             {
                 animator.SetFloat("Horizontal", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
@@ -66,42 +79,13 @@ public class MovimientoJugador : MonoBehaviour
             }
             if (Input.GetButtonDown("Jump") && Piso())
             {
-                animator.SetBool("animacionSaltar", true);
-                if (jumpbool)
-                {
-                    Personaje.src.PlayOneShot(Personaje.jump[0]);
-                    jumpbool = false;
-                } else
-                {
-                    Personaje.src.PlayOneShot(Personaje.jump[1]);
-                    jumpbool = true;
-                }
+                Personaje.src.PlayOneShot(Personaje.Salto);
                 rb2d.velocity = cantidadSalto * transform.up;
             }   
         } else
         {
             KBCounter -= Time.deltaTime;
         }
-
-
-
-
-        //fix player jump when collides with next level
-        //if (Piso())
-        //    {
-        //        animator.SetBool("animacionCaer", false);
-        //    }
-
-        //    if (rb2d.velocity.y < 0 && !Piso())
-        //    {
-        //        animator.SetBool("animacionCaer", true);
-        //        animator.SetBool("animacionSaltar", false);
-
-        //    }
-
-
-
-
     }
 
     public void Rotacion()
@@ -116,7 +100,6 @@ public class MovimientoJugador : MonoBehaviour
         }
     }
 
-    // funcion deteccion de piso con Boxcast
     public bool Piso()
     {
         return Physics2D.BoxCast(bc2d.bounds.center, bc2d.bounds.size, 0f, Vector2.down, .1f, terrenoSaltable);

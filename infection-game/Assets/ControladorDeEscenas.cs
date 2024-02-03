@@ -30,9 +30,9 @@ public class ControladorDeEscenas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.L))
         {
-            RecargarNivel();
+            DeletePlayerPrefs();
         } 
 
      
@@ -48,16 +48,6 @@ public class ControladorDeEscenas : MonoBehaviour
     {
         Destroy(GameObject.FindWithTag("CoinManager"));
         Destroy(GameObject.FindWithTag("Checkpoint"));
-        // PlayerPrefs.SetInt("currentLvl", SceneManager.GetActiveScene().buildIndex);
-        //if (!GameObject.FindWithTag("Cinematic") && SceneManager.GetActiveScene().buildIndex > 5)
-        //{
-        //    if (Puntuation != null)
-        //    {
-        //        PlayerPrefs.SetInt("totalCoins", PlayerPrefs.GetInt("totalCoins") + Puntuation.monedas);
-        //    }
-        //    CargarNivel(100);
-        //} else
-        //{
         if (SceneManager.GetActiveScene().buildIndex < 6)
         {
             SiguienteNivel();
@@ -65,7 +55,6 @@ public class ControladorDeEscenas : MonoBehaviour
         {
             CargarNivel(200);
         }
-        // }
               
     }
 
@@ -80,11 +69,6 @@ public class ControladorDeEscenas : MonoBehaviour
         Destroy(GameObject.FindWithTag("Checkpoint"));
         animator.SetTrigger("Fade");
         nivelACargar = nivel;
-    }
-
-    public void ContinueGame()
-    {
-        // CargarNivel(PlayerPrefs.GetInt("currentLvl") + 1);
     }
 
     public void FadeTerminado()

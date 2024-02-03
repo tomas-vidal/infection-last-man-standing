@@ -160,15 +160,16 @@ MonoBehaviour:
   follow: {fileID: 0}
   checkPointPosition: {fileID: 0}
   transform: {fileID: 0}
+  delay: 0.5
   KBCounter: 0
   src: {fileID: 0}
   jump:
   - {fileID: 8300000, guid: 7ed058fcad5b1734ba464b0eeb7c6d53, type: 3}
-  - {fileID: 8300000, guid: c03286e008bc0924e94bcb19585f0c5e, type: 3}
   "Da\xF1o": {fileID: 8300000, guid: b215ab43cde7dfa4d960093a7858e9e1, type: 3}
   Moneda: {fileID: 8300000, guid: b6480c88796595d4484b6ae4e0c8ae57, type: 3}
   Muerte: {fileID: 8300000, guid: 762547b548944634ea6a684924af1496, type: 3}
   Salto: {fileID: 8300000, guid: 7ed058fcad5b1734ba464b0eeb7c6d53, type: 3}
+  isBeingHurt: 0
 --- !u!114 &4590156642512949592
 MonoBehaviour:
   m_ObjectHideFlags: 0

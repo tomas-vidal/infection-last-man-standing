@@ -24001,6 +24001,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2242e7ee03d0abd46976deea33d654ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonMusic: {fileID: 0}
+  musicIcons: []
 --- !u!114 &729196155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25686,8 +25688,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1628705175518263638, guid: 141d363611a707348be44daee7c52a07, type: 3}
+      propertyPath: m_Size.x
+      value: 27.315731
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628705175518263638, guid: 141d363611a707348be44daee7c52a07, type: 3}
       propertyPath: m_Size.y
       value: 24.041157
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628705175518263638, guid: 141d363611a707348be44daee7c52a07, type: 3}
+      propertyPath: m_Offset.x
+      value: 13.157866
       objectReference: {fileID: 0}
     - target: {fileID: 1628705175518263638, guid: 141d363611a707348be44daee7c52a07, type: 3}
       propertyPath: m_Offset.y

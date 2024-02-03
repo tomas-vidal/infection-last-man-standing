@@ -172,6 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bc2d: {fileID: 0}
   spikeSpeed: 2.8
+  transform: {fileID: 0}
 --- !u!61 &18603514
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15346,6 +15347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthManager: {fileID: 1236906652}
   Puntuation: {fileID: 2125996673}
+  lvlsUnlocked: 0
 --- !u!95 &375660701
 Animator:
   serializedVersion: 5
@@ -15477,6 +15479,14 @@ PrefabInstance:
     - target: {fileID: 3157489961382813759, guid: 216753ce3a55a694195ab57a5463e2ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157489961806784201, guid: 216753ce3a55a694195ab57a5463e2ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2048063698}
+    - target: {fileID: 3157489961806784201, guid: 216753ce3a55a694195ab57a5463e2ca, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeGame
       objectReference: {fileID: 0}
     - target: {fileID: 3157489962091988474, guid: 216753ce3a55a694195ab57a5463e2ca, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -16149,6 +16159,7 @@ MonoBehaviour:
   ControladorDeEscenas: {fileID: 375660700}
   HealthManager: {fileID: 1236906652}
   Personaje: {fileID: 1236906657}
+  transform: {fileID: 0}
 --- !u!212 &637055853
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16265,6 +16276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bc2d: {fileID: 0}
   spikeSpeed: 2.8
+  transform: {fileID: 0}
 --- !u!61 &692834701
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16545,6 +16557,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2242e7ee03d0abd46976deea33d654ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonMusic: {fileID: 0}
+  musicIcons: []
 --- !u!114 &729196155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17093,6 +17107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bc2d: {fileID: 0}
   spikeSpeed: 2.8
+  transform: {fileID: 0}
 --- !u!61 &933624957
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18559,6 +18574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bc2d: {fileID: 0}
   spikeSpeed: 0
+  transform: {fileID: 0}
 --- !u!61 &1335022297
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18592,6 +18608,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1628705175518263638, guid: 141d363611a707348be44daee7c52a07, type: 3}
+      propertyPath: m_Size.x
+      value: 12.533806
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628705175518263638, guid: 141d363611a707348be44daee7c52a07, type: 3}
+      propertyPath: m_Size.y
+      value: 8.868386
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628705175518263638, guid: 141d363611a707348be44daee7c52a07, type: 3}
+      propertyPath: m_Offset.x
+      value: 5.766903
+      objectReference: {fileID: 0}
+    - target: {fileID: 1628705175518263638, guid: 141d363611a707348be44daee7c52a07, type: 3}
+      propertyPath: m_Offset.y
+      value: 3.2491927
+      objectReference: {fileID: 0}
     - target: {fileID: 1628705175518263639, guid: 141d363611a707348be44daee7c52a07, type: 3}
       propertyPath: Piso
       value: 
@@ -19619,6 +19651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bc2d: {fileID: 0}
   spikeSpeed: 2.8
+  transform: {fileID: 0}
 --- !u!61 &1835048150
 BoxCollider2D:
   m_ObjectHideFlags: 0

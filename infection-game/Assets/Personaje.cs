@@ -32,7 +32,6 @@ public class Personaje : MonoBehaviour
     public float KBCounter;
 
     public AudioSource src;
-    public AudioClip[] jump;
     public AudioClip Daño, Moneda, Muerte, Salto;
 
     public bool isBeingHurt = false;
@@ -60,7 +59,11 @@ public class Personaje : MonoBehaviour
         if (state == GameState.vivo && !PauseMenu.isPaused && !isBeingHurt)
         {
             MovimientoJugador.Movimiento();
-        } 
+        }
+        //if (Input.GetKeyDown(KeyCode.G))
+        //{
+        //    GameObject.GetComponent<BoxCollider2D>.setActive = false;
+        //}
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -78,6 +81,7 @@ public class Personaje : MonoBehaviour
     {
         if (state == GameState.vivo)
         {
+            animator.SetTrigger("daño");
             MovimientoJugador.KBCounter = 0.3f;
             src.PlayOneShot(Daño);
 

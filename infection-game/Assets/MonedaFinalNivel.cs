@@ -45,6 +45,22 @@ public class MonedaFinalNivel : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            MovimientoJugador.transform.rotation = Quaternion.Euler(0, 0, 0);
+            MovimientoJugador.animator.SetBool("animacionSaltar", false);
+            if (MovimientoJugador.Piso())
+            {
+                MovimientoJugador.rb2d.velocity = new Vector2(5f, 0f);
+                MovimientoJugador.animator.SetFloat("Horizontal", 1);
+                MovimientoJugador.animator.SetBool("isGrounded", true);
+                MovimientoJugador.animator.SetBool("animacionCaer", false);
+            }
+        }
+    }
+
     private IEnumerator delayLvl()
     {
         Destroy(GameObject.FindWithTag("CoinManager"));

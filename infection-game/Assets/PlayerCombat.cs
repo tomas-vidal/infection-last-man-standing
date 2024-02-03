@@ -29,9 +29,6 @@ public class PlayerCombat : MonoBehaviour
 
     public Puntuation Puntuation;
 
-    //public Sprite bullet;
-    //public Sprite bulletMissing;
-    //public Image bulletUI;
     public static int totalAmmo;
     public static float bulletKnockback;
     private int currentAmmo;
