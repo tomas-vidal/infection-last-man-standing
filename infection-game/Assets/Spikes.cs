@@ -25,15 +25,14 @@ public class Spikes : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        if (Personaje.state == GameState.muerto)
+        {
+            Physics2D.IgnoreCollision(other.gameObject.GetComponent<BoxCollider2D>(), gameObject.GetComponent<BoxCollider2D>());
+        }
 
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<HealthManager>().recibioDaño(1, transform);
-        }
-
-        if (Personaje.state == GameState.muerto)
-        {
-            Physics2D.IgnoreCollision(other.gameObject.GetComponent<BoxCollider2D>(), gameObject.GetComponent<BoxCollider2D>());
         }
 
     }

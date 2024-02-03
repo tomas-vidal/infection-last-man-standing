@@ -16,10 +16,11 @@ public class BossSkillPrefab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scale += 0.02f;
+        scale += 0.03f;
         transform.localScale = new Vector2(scale, scale);
         if (scale >= 10f)
             Destroy(gameObject);
+            
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)

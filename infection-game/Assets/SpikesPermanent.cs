@@ -19,15 +19,10 @@ public class SpikesPermanent : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other == null) return;
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<HealthManager>().recibioDaño(10, transform);
         }
-
-        if (Personaje.state == GameState.muerto)
-        {
-            Physics2D.IgnoreCollision(other.gameObject.GetComponent<BoxCollider2D>(), gameObject.GetComponent<BoxCollider2D>());
-        }
-
     }
 }
