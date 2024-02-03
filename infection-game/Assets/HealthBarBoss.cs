@@ -35,7 +35,7 @@ public class HealthBarBoss : MonoBehaviour
 
     private IEnumerator delayEnd()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         ControladorDeEscenas.CargarNivel(14);
     }
 }

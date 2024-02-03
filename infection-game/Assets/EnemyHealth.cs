@@ -54,13 +54,7 @@ public class EnemyHealth : MonoBehaviour
 
 
         PlayFeedback(position);
-        // knockback
-        //if (position.position.x < transform.position.x) {
-        //    rb2d.velocity = new Vector2(velocidadRebote.x, 0);
 
-        //} else {
-        //    rb2d.velocity = new Vector2(-velocidadRebote.x, 0);
-        //}
 
         if (currentHealth <= 0)
         {

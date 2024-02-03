@@ -28,7 +28,10 @@ public class BossWalking : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        rb2d.velocity = new Vector2(0, rb2d.velocity.y);
+        if (animator.GetBool("isDead") == false)
+        {
+            rb2d.velocity = new Vector2(0, rb2d.velocity.y);
+        }
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
